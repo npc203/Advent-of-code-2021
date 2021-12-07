@@ -1,10 +1,11 @@
 from glob import glob
 import os
+from datetime import date
 
 folders = glob("./Day*")
 
 def make_new():
-  new_day = max(int(i.split("Day")[1]) for i in folders) + 1
+  new_day = date.today().day
 
   folder_name = f"Day{new_day}"
   os.mkdir(folder_name)
